@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Edit Note</h2>
+    <form method="POST" action="{{ url_for('main.edit_note', id=note.id) }}">
+        {{ form.hidden_tag() }}
+        <div>{{ form.note_title.label }} {{ form.note_title() }}</div>
+        <div>{{ form.note_content.label }} {{ form.note_content() }}</div>
+        <div>{{ form.submit() }}</div>
+    </form>
+{% endblock %}

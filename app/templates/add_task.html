@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Add Task</h2>
+    <form method="POST" action="{{ url_for('main.add_task') }}">
+        {{ form.hidden_tag() }}
+        <div>{{ form.task_name.label }} {{ form.task_name() }}</div>
+        <div>{{ form.details.label }} {{ form.details() }}</div>
+        <div>{{ form.priority.label }} {{ form.priority() }}</div>
+        <div>{{ form.due_date.label }} {{ form.due_date() }}</div>
+        <div>{{ form.submit() }}</div>
+    </form>
+{% endblock %}

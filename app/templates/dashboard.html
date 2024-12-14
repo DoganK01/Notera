@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Dashboard</h2>
+    <h3>Tasks</h3>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.task_name }} - {{ task.priority }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Notes</h3>
+    <ul>
+        {% for note in notes %}
+            <li>{{ note.note_title }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
